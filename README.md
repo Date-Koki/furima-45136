@@ -30,19 +30,19 @@
 | shipping_fee_id    | integer    | null: false |
 | prefecture_id      | integer    | null: false |
 | delivery_time_id   | integer    | null: false |
-| user_id            | references | null: false, foreign_key |
+| user               | references | null: false, foreign_key |
 
 ### Association
 
-- has_one :orders
+- has_one :order
 - belongs_to :user
 
 ## order テーブル
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| user_id    | references | null: false, foreign_key: true |
-| product_id | references | null: false, foreign_key: true |
+| user       | references | null: false, foreign_key: true |
+| item       | references | null: false, foreign_key: true |
 
 ### Association
 
