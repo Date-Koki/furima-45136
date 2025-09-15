@@ -23,5 +23,4 @@ class Item < ApplicationRecord
   validates :category_id, :status_id, :shipping_fee_id, :prefecture_id, :delivery_time_id,
             presence: true,
             numericality: { other_than: 0 }
-  validates :user, presence: true
 end
