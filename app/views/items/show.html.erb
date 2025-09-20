@@ -16,14 +16,14 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        <%= @item.price %>
+        <span>¥<%= @item.price %></span>
       </span>
       <span class="item-postage">
         <%= @item.shipping_fee.name %>
       </span>
     </div>
 
-    <% if user_signed_in? && @item.order == nil %>
+    <% if user_signed_in? %>
       <% if current_user.id == @item.user_id %>
         <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
         <p class="or-text">or</p>
