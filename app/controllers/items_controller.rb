@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
       redirect_to item_path(@item.id)
     else
       render :edit, status: :unprocessable_entity
-      @item = Item.update(item_params)
     end
   end
 
