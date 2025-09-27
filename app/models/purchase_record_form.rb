@@ -13,9 +13,9 @@ class PurchaseRecordForm
   validates :token, presence: true
 
   def save
-    purchase_record = PurchaseRecord.create(user_id: user_id, item_id: item_id)
+    order = Order.create(user_id: user_id, item_id: item_id)
 
-    ShippingAddress.create(postcode: postcode, prefecture_id: prefecture_id, municipality: municipality,
-                           street_address: street_address, building_name: building_name, telephone_number: telephone_number, purchase_record_id: purchase_record.id)
+    Purchaser.create(postcode: postcode, prefecture_id: prefecture_id, municipality: municipality,
+                     street_address: street_address, building_name: building_name, telephone_number: telephone_number, order_id: order.id)
   end
 end
