@@ -5,8 +5,6 @@ class OrdersController < ApplicationController
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @purchase_record_form = ::PurchaseRecordForm.new
     redirect_to root_path if current_user.id == @item.user_id || @item.order.present?
-
-    redirect_to root_path
   end
 
   def create
